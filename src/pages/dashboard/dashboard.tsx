@@ -10,11 +10,11 @@ import useAuth from "../../router/useAuth";
 const Dashboard = (): JSX.Element => {
     const { setAuth } = useAuth();
 
-
-    const datas: IStatistic[] = [
-        { active: 20, inactive: 4, completed: 7 },
-        { active: 8, inactive: 8, completed: 3 },
-        { active: 30, inactive: 5, completed: 4 },
+    // mock data dashboard
+    const data: IStatistic[] = [
+        { name: 'Сценарии', active: 20, inactive: 4, completed: 7 },
+        { name: 'Списки', active: 8, inactive: 8, completed: 3 },
+        { name: 'Диалоги', active: 30, inactive: 5, completed: 4 },
     ];
 
     const logOut = () => {
@@ -22,10 +22,9 @@ const Dashboard = (): JSX.Element => {
         setAuth(false);
     }
 
-    const viewData = datas.map((item, index) => {
-        const labels = ['Сценарии', 'Списки', 'Диалоги'];
+    const viewData = data.map((item, index) => {
         return (
-            <Widget data={item} key={index} label={labels[index]} />
+            <Widget data={item} key={index} label={data[index].name} />
         )
     })
     return (
