@@ -5,7 +5,7 @@ import Form from "../../components/form/form";
 import useAuth from "../../router/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { USER_AUTH } from "../../components/apollo/queries";
+import { USER_AUTH } from "../../apollo/queries";
 
 
 const Login = (): JSX.Element => {
