@@ -1,0 +1,14 @@
+circle {
+  transition: all 0.7s ease-in-out;
+}
+
+.pie_svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.pie_value {
+    fill: rgb(255, 121, 4);
+    font-size: 30px;
+    font-weight: 600;
+}

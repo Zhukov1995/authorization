@@ -1,0 +1,36 @@
+.form {
+    width: 350px;
+    padding: 0px 20px;
+    text-align: center;
+    h3 {
+        font-weight: 500;
+    }
+    p {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+    .error {
+        margin-top: 20px;
+        color: var(--danger-text);
+        background-color: var(--danger-background);
+        border-radius: 5px;
+        font-size: 13px;
+        padding: 10px;
+    }
+    input {
+        width: 100%;
+        padding: 5px 10px;
+        border:none;
+        border-radius: 5px;
+        border: 1px solid var(--silver);
+        transition: all 0.5s;
+        margin-top: 20px;
+        &:focus {
+            outline: none;
+            border: 1px solid var(--orange);
+        }
+        &:nth-last-child(even) {
+            margin-bottom: 20px;
+        }
+    }
+}
