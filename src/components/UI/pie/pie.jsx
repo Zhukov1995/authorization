@@ -1,7 +1,8 @@
 import React from "react";
 import './pie.css';
 
-const Circle = ({ colour, pct }) => {
+
+const Circle = ({ colour, pct, name, hoverSectorMouseEnter, hoverMouseLeave }) => {
     const r = 100;
     const circ = 2 * Math.PI * r;
     const strokePct = ((100 - pct) * circ) / 100;
@@ -11,10 +12,14 @@ const Circle = ({ colour, pct }) => {
             cx={75}
             cy={125}
             fill="transparent"
+            onMouseEnter={(e) => hoverSectorMouseEnter(e)}
+            onMouseLeave={(e) => hoverMouseLeave()}
             stroke={strokePct !== circ ? colour : ""}
             strokeWidth={"10px"}
             strokeDasharray={circ}
             strokeDashoffset={pct ? strokePct : 0}
+            data-name={name}
+
         ></circle>
     );
 };
@@ -43,15 +48,31 @@ const Pie = (props) => {
         hoverValue,
         colorSectorActive,
         colorSectorFinish,
-        colorCircle
+        colorCircle,
+        hoverMouseLeave,
+        hoverSectorMouseEnter
     } = props;
 
     return (
         <svg width={250} height={250} className="pie_svg">
             <g transform={`rotate(-90 ${"100 100"})`}>
-                <Circle colour={colorCircle} />
-                <Circle colour={colorSectorActive} pct={percentActive} />
-                <Circle colour={colorSectorFinish} pct={percentFinish} />
+                <Circle
+                    colour={colorCircle}
+                    name="inactive"
+                    hoverSectorMouseEnter={hoverSectorMouseEnter}
+                    hoverMouseLeave={hoverMouseLeave} />
+                <Circle
+                    colour={colorSectorActive}
+                    pct={percentActive}
+                    name="active"
+                    hoverSectorMouseEnter={hoverSectorMouseEnter}
+                    hoverMouseLeave={hoverMouseLeave} />
+                <Circle
+                    colour={colorSectorFinish}
+                    pct={percentFinish}
+                    name="completed"
+                    hoverSectorMouseEnter={hoverSectorMouseEnter}
+                    hoverMouseLeave={hoverMouseLeave} />
             </g>
             <Text percentage={label} y={45} />
             <Text percentage={hoverValue} y={60} />

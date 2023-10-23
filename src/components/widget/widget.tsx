@@ -60,6 +60,31 @@ const Widget = ({ data, label }: Props): JSX.Element => {
         }
     }
 
+
+    const hoverSectorMouseEnter = (e: any) => {
+        const state = e.target.getAttribute('data-name');
+        switch (state) {
+            case 'active': {
+                setColorSectorActive('rgb(254, 197, 90)');
+                setHoverValue(data.active);
+            };
+                break;
+            case 'inactive': {
+                setColorSectorActive('lightgrey');
+                setColorSectorFinish('lightgrey');
+                setColorCircle('rgb(165, 165, 165)');
+                setHoverValue(data.inactive);
+            };
+                break;
+            case 'completed': {
+                setColorSectorFinish('rgb(220, 151, 2)');
+                setHoverValue(data.completed);
+            };
+                break;
+            default: setColorSectorActive('rgb(254, 197, 90)');;
+        }
+    }
+
     const hoverMouseLeave = () => {
         setHoverValue(allCount);
         setColorSectorActive('silver');
@@ -91,6 +116,8 @@ const Widget = ({ data, label }: Props): JSX.Element => {
                 colorSectorActive={colorSectorActive}
                 colorSectorFinish={colorSectorFinish}
                 colorCircle={colorCircle}
+                hoverSectorMouseEnter={hoverSectorMouseEnter}
+                hoverMouseLeave={hoverMouseLeave}
             />
             <div className="widget__info">
                 {viewArrInfo}
