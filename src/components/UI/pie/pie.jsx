@@ -15,7 +15,7 @@ const Circle = ({ colour, pct, name, hoverSectorMouseEnter, hoverMouseLeave }) =
             onMouseEnter={(e) => hoverSectorMouseEnter(e)}
             onMouseLeave={(e) => hoverMouseLeave()}
             stroke={strokePct !== circ ? colour : ""}
-            strokeWidth={"10px"}
+            strokeWidth={"13px"}
             strokeDasharray={circ}
             strokeDashoffset={pct ? strokePct : 0}
             data-name={name}

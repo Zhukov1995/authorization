@@ -1,5 +1,6 @@
 import React from "react";
 import './dashboard.scss';
+import './media.scss';
 
 import IStatistic from "../../interfaces/IStatistic";
 import Widget from "../../components/widget/widget";

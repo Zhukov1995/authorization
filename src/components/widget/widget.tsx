@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './widget.scss';
+import './media.scss';
 import Pie from "../UI/pie/pie";
 import type IStatistic from "../../interfaces/IStatistic";
 
@@ -62,6 +63,7 @@ const Widget = ({ data, label }: Props): JSX.Element => {
 
 
     const hoverSectorMouseEnter = (e: any) => {
+        e.stopPropagation();
         const state = e.target.getAttribute('data-name');
         switch (state) {
             case 'active': {

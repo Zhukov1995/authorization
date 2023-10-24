@@ -1,0 +1,22 @@
+@media(max-width: 1150px) {
+    .dashboard {
+        .container {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width: 950px) {
+    .dashboard {
+        .container {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+         footer {
+            position: static;
+        }
+    }
+}
