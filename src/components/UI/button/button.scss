@@ -1,6 +1,7 @@
   .button {
         padding: 10px;
         border: none;
+        color: black;
         background-color: var(--orange);
         &:hover {
             background-color: var(--deep-orange);
