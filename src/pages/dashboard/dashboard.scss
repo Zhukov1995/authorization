@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
+
 .dashboard {
     header {
         height: 50px;
         background-color: #fbf7f2;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
-        padding-right: 10px;
+        padding: 0px 15px;
+        .logo {
+            font-size: 25px;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            color: rgb(78, 78, 78);
+        }
     }
     .container {
         display: flex;

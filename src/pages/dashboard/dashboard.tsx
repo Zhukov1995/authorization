@@ -31,6 +31,7 @@ const Dashboard = (): JSX.Element => {
     return (
         <div className="dashboard">
             <header>
+                <span className="logo">Gravitel</span>
                 <Link to={'/login'}>
                     <Button
                         width='70px'
